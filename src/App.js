@@ -1,10 +1,15 @@
 import './App.css';
-import TvData from './components/TvData';
+import { Route, Switch } from 'react-router-dom';
+import TvShowList from './components/TvShowList';
+import TvShowDetails from './components/TvShowDetails';
 
 function App() {
   return (
     <div className="App">
-      <TvData />
+      <Switch>
+        <Route exact path="/" component={TvShowList} />
+        <Route exact path="/show/:id" render={routeProps => <TvShowDetails id={routeProps.match.params.id} routeProps={routeProps} />} />
+      </Switch>
     </div>
   );
 }

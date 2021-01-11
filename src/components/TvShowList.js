@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import TvShowListItem from './TvShowListItem';
 
-const TvData = () => {
+const TvShowList = () => {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
@@ -10,10 +11,10 @@ const TvData = () => {
   }, []);
   return (
     <>
-      <h1>Tv data goes here!</h1>
-      <h4>{data.length}</h4>
+      <h1>Tv data items goes here!</h1>
+      {data.map(show => <TvShowListItem key={show.id} show={show.show} />)}
     </>
   );
 };
 
-export default TvData;
+export default TvShowList;
