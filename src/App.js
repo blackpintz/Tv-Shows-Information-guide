@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={TvShowList} />
-        <Route exact path="/show/:id" render={routeProps => <TvShowDetails id={routeProps.match.params.id} routeProps={routeProps} />} />
+        <Route exact path="/show/:id" render={routeProps => <TvShowDetails id={routeProps.match.params.id} routeProps={routeProps} show="This is the show we re passing." />} />
       </Switch>
     </div>
   );
