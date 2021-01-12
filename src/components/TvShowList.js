@@ -4,16 +4,18 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import TvShowListItem from './TvShowListItem';
 import addTvShowData from '../actions/tvShows';
+import TvShowFilter from './TvShowFilter';
 
 const TvShowList = ({ dispatch, tvShows }) => {
   useEffect(async () => {
-    const result = await axios.get('http://api.tvmaze.com/schedule?country=CN&date=2020-12-01');
+    const result = await axios.get('http://api.tvmaze.com/schedule?country=US&date=2020-12-01');
     const { data } = result;
     dispatch(addTvShowData(data));
   }, []);
   return (
     <>
       <h1>Tv data items goes here!</h1>
+      <TvShowFilter />
       {tvShows.map(show => <TvShowListItem key={show.id} show={show} />)}
     </>
   );

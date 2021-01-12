@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 const TvShowListItem = ({ show }) => (
   <>
-    <h4>Each item of the tvshow list displayed with few details.</h4>
+    <h4>{show.show.name}</h4>
     <Link to={`/show/${show.id}`}>
       <button type="button">See more about TV show</button>
     </Link>
