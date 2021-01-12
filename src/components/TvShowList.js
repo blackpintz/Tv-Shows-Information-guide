@@ -5,6 +5,7 @@ import propTypes from 'prop-types';
 import TvShowListItem from './TvShowListItem';
 import addTvShowData from '../actions/tvShows';
 import TvShowFilter from './TvShowFilter';
+import filteredtvShows from '../selectors/filtertvShows';
 
 const TvShowList = ({ dispatch, tvShows }) => {
   useEffect(async () => {
@@ -21,8 +22,8 @@ const TvShowList = ({ dispatch, tvShows }) => {
   );
 };
 
-const mapStateToProps = ({ tvShows }) => ({
-  tvShows,
+const mapStateToProps = ({ tvShows, filter }) => ({
+  tvShows: filteredtvShows(tvShows, filter),
 });
 
 TvShowList.propTypes = {

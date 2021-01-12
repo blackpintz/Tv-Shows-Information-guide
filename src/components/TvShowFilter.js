@@ -8,7 +8,7 @@ import changeFilter from '../actions/filter';
 const TvShowFilter = ({ dispatch }) => (
   <Select
     options={showGenres}
-    onChange={val => dispatch(changeFilter(val.value))}
+    onChange={val => dispatch(changeFilter(val.label))}
     placeholder="Choose Genre"
   />
 );

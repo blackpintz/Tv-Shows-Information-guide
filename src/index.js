@@ -7,8 +7,6 @@ import App from './App';
 import store from './store/configureStore';
 import reportWebVitals from './reportWebVitals';
 
-console.log(store.getState());
-
 const jsx = (
   <Provider store={store}>
     <BrowserRouter>

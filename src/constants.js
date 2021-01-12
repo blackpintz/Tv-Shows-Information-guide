@@ -5,7 +5,9 @@ const showGenres = [
   { value: 'comedy', label: 'Comedy' },
   { value: 'romance', label: 'Romance' },
   { value: 'thriller', label: 'Thriller' },
-  { value: 'mystery', label: 'Mystery' },
+  { value: 'crime', label: 'Crime' },
+  { value: 'food', label: 'Food' },
+  { value: 'nature', label: 'Nature' },
   { value: 'medical', label: 'Medical' },
   { value: 'family', label: 'Family' },
 ];
