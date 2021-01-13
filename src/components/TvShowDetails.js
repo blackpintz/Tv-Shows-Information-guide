@@ -2,19 +2,17 @@ import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import { Container, Button } from 'react-bootstrap';
 import addTvShowData from '../actions/tvShows';
 
-const TvShowDetails = ({ dispatch, tvShow, routeProps }) => {
+export const TvShowDetails = ({ onFetch, tvShow, routeProps }) => {
   const { show } = tvShow;
   const { history } = routeProps;
   useEffect(async () => {
     const result = await axios.get('http://api.tvmaze.com/schedule?country=US&date=2020-12-01');
     const { data } = result;
-    if (show === 'no value') dispatch(addTvShowData(data));
+    if (show === 'no value') onFetch(data);
   }, []);
-  console.log(tvShow);
   return (
     <>
       <Container className="d-flex flex-column align-items-center">
@@ -24,7 +22,7 @@ const TvShowDetails = ({ dispatch, tvShow, routeProps }) => {
           {show.genres.length !== 0 ? (
             <div className="d-flex ml-2">
               |
-              {show.genres.map(genre => <p key={uuidv4()} className="px-1">{`${genre},`}</p>)}
+              {show.genres.map(genre => <p key={genre} className="px-1">{`${genre},`}</p>)}
               |
             </div>
           ) : (
@@ -49,6 +47,10 @@ const mapStateToProps = ({ tvShows }, props) => ({
   tvShow: tvShows.find(show => show.id.toString() === props.id),
 });
 
+const mapDispatchToProps = dispatch => ({
+  onFetch: data => dispatch(addTvShowData(data)),
+});
+
 TvShowDetails.propTypes = {
   tvShow: propTypes.objectOf(propTypes.oneOfType([
     propTypes.string,
@@ -56,13 +58,14 @@ TvShowDetails.propTypes = {
     propTypes.object,
   ])),
   routeProps: propTypes.objectOf(propTypes.object),
-  dispatch: propTypes.func.isRequired,
-  history: propTypes.func.isRequired,
+  onFetch: propTypes.func.isRequired,
+  history: propTypes.objectOf(propTypes.func.isRequired),
 };
 
 TvShowDetails.defaultProps = {
   tvShow: { show: 'no value' },
   routeProps: { history: 'no value' },
+  history: {},
 };
 
-export default connect(mapStateToProps)(TvShowDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(TvShowDetails);

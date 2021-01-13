@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TvShowList component with the list of tvShows 1`] = `
+<Fragment>
+  <Container
+    className="d-flex flex-column align-items-center"
+    fluid={false}
+  >
+    <h1 />
+    <div
+      className="d-flex"
+    >
+      <p>
+        20 mins
+      </p>
+      <div
+        className="d-flex ml-2"
+      >
+        |
+        <p
+          className="px-1"
+          key="Comedy"
+        >
+          Comedy,
+        </p>
+        <p
+          className="px-1"
+          key="Thriller"
+        >
+          Thriller,
+        </p>
+        |
+      </div>
+      <div
+        className="d-flex"
+      >
+        <p
+          className="px-2"
+        >
+          scripted
+        </p>
+        |
+      </div>
+    </div>
+    <div>
+      <img
+        alt="show-img"
+        className="detail-img"
+        src="http://static.tvmaze.com/uploads/images/medium_portrait/105/264401.jpg"
+      />
+      <p
+        className="mt-2 text-left"
+      >
+        The show has 29 episodes. Watch it every Monday, at 04:00hours.
+      </p>
+    </div>
+    <Button
+      active={false}
+      className="mb-3"
+      disabled={false}
+      onClick={[Function]}
+      variant="primary"
+    >
+      Go to Homepage
+    </Button>
+  </Container>
+</Fragment>
+`;

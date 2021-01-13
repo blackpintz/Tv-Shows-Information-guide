@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import showGenres from '../constants';
 import changeFilter from '../actions/filter';
 
-const TvShowFilter = ({ dispatch }) => (
+export const TvShowFilter = ({ onFilter }) => (
   <Select
     options={showGenres}
-    onChange={val => dispatch(changeFilter(val.label))}
+    onChange={val => onFilter(val.label)}
     placeholder="Choose Genre"
     className="mb-3"
   />
@@ -18,8 +18,12 @@ const mapStateToProps = ({ filter }) => ({
   filter,
 });
 
+const mapDispatchToProps = dispatch => ({
+  onFilter: val => dispatch(changeFilter(val)),
+});
+
 TvShowFilter.propTypes = {
-  dispatch: propTypes.func.isRequired,
+  onFilter: propTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(TvShowFilter);
+export default connect(mapStateToProps, mapDispatchToProps)(TvShowFilter);

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render show list filters correctly 1`] = `
+<StateManager
+  className="mb-3"
+  defaultInputValue=""
+  defaultMenuIsOpen={false}
+  defaultValue={null}
+  onChange={[Function]}
+  options={
+    Array [
+      Object {
+        "label": "All",
+        "value": "all",
+      },
+      Object {
+        "label": "Action",
+        "value": "action",
+      },
+      Object {
+        "label": "Drama",
+        "value": "drama",
+      },
+      Object {
+        "label": "Comedy",
+        "value": "comedy",
+      },
+      Object {
+        "label": "Romance",
+        "value": "romance",
+      },
+      Object {
+        "label": "Thriller",
+        "value": "thriller",
+      },
+      Object {
+        "label": "Crime",
+        "value": "crime",
+      },
+      Object {
+        "label": "Food",
+        "value": "food",
+      },
+      Object {
+        "label": "Nature",
+        "value": "nature",
+      },
+      Object {
+        "label": "Medical",
+        "value": "medical",
+      },
+      Object {
+        "label": "Family",
+        "value": "family",
+      },
+    ]
+  }
+  placeholder="Choose Genre"
+/>
+`;

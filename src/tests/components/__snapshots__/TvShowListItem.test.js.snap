@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TvShowListItem component with the list of tvShows 1`] = `
+<Fragment>
+  <Col
+    className="mb-3"
+    lg={4}
+  >
+    <img
+      alt="show-img"
+      className="img"
+      src="http://static.tvmaze.com/uploads/images/medium_portrait/105/264401.jpg"
+    />
+    <h5 />
+    <Link
+      to="/show/1"
+    >
+      See more
+    </Link>
+  </Col>
+</Fragment>
+`;
