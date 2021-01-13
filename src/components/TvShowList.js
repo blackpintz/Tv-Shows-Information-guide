@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
+import { Container, Row } from 'react-bootstrap';
 import TvShowListItem from './TvShowListItem';
 import addTvShowData from '../actions/tvShows';
 import TvShowFilter from './TvShowFilter';
@@ -13,11 +14,16 @@ const TvShowList = ({ dispatch, tvShows }) => {
     const { data } = result;
     dispatch(addTvShowData(data));
   }, []);
+  console.log(tvShows);
   return (
     <>
-      <h1>Tv data items goes here!</h1>
-      <TvShowFilter />
-      {tvShows.map(show => <TvShowListItem key={show.id} show={show} />)}
+      <Container>
+        <h1>TV Information Guide</h1>
+        <TvShowFilter />
+        <Row>
+          {tvShows.map(show => <TvShowListItem key={show.id} show={show} />)}
+        </Row>
+      </Container>
     </>
   );
 };

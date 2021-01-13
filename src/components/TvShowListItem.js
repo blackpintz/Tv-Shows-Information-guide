@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
+import { Col } from 'react-bootstrap';
 
 const TvShowListItem = ({ show }) => (
   <>
-    <h4>{show.show.name}</h4>
-    <Link to={`/show/${show.id}`}>
-      <button type="button">See more about TV show</button>
-    </Link>
+    <Col lg={4} className="mb-3">
+      <img src={show.show.image.medium} className="img" alt="show-img" />
+      <h5>{show.show.name}</h5>
+      <Link to={`/show/${show.id}`}>
+        See more
+      </Link>
+    </Col>
   </>
 );
 

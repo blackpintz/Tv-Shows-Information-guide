@@ -10,6 +10,7 @@ const TvShowFilter = ({ dispatch }) => (
     options={showGenres}
     onChange={val => dispatch(changeFilter(val.label))}
     placeholder="Choose Genre"
+    className="mb-3"
   />
 );
 
