@@ -9,7 +9,7 @@ export const TvShowDetails = ({ onFetch, tvShow, routeProps }) => {
   const { show } = tvShow;
   const { history } = routeProps;
   useEffect(async () => {
-    const result = await axios.get('http://api.tvmaze.com/schedule?country=US&date=2020-12-01');
+    const result = await axios.get('https://api.tvmaze.com/schedule?country=US&date=2020-12-01');
     const { data } = result;
     if (show === 'no value') onFetch(data);
   }, []);

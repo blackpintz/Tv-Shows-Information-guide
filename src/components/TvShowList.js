@@ -10,7 +10,7 @@ import filteredtvShows from '../selectors/filtertvShows';
 
 const TvShowList = ({ onFetch, tvShows }) => {
   useEffect(async () => {
-    const result = await axios.get('http://api.tvmaze.com/schedule?country=US&date=2020-12-01');
+    const result = await axios.get('https://api.tvmaze.com/schedule?country=US&date=2020-12-01');
     const { data } = result;
     onFetch(data);
   }, []);
