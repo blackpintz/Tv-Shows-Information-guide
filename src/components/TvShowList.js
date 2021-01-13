@@ -14,7 +14,6 @@ const TvShowList = ({ dispatch, tvShows }) => {
     const { data } = result;
     dispatch(addTvShowData(data));
   }, []);
-  console.log(tvShows);
   return (
     <>
       <Container>
