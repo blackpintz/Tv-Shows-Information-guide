@@ -10,7 +10,7 @@ A simple tv guide application built using React and Redux. The tv show data used
 
 ## Built with
 - Javascript
-- Javascript design patterns
+- react-bootstrap
 - Node.js
 - React.js
 - Redux
@@ -37,6 +37,7 @@ To get a local copy up and running follow these simple example steps.
 - Cd into the project directory.
 - Run ```yarn install``` to install dependencies in package.json.
 - Run ```npm start``` and view the page on your localhost.
+- Run ```npm test``` to view tests.
 
 
 ## Contributions
