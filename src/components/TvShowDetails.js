@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { Container, Button } from 'react-bootstrap';
-import addTvShowData from '../actions/tvShows';
 
-export const TvShowDetails = ({ onFetch, tvShow, routeProps }) => {
+export const TvShowDetails = ({ tvShow, routeProps }) => {
   const { show } = tvShow;
   const { history } = routeProps;
-  useEffect(async () => {
-    const result = await axios.get('https://api.tvmaze.com/schedule?country=US&date=2020-12-01');
-    const { data } = result;
-    if (show === 'no value') onFetch(data);
-  }, []);
   return (
     <>
       <Container className="d-flex flex-column align-items-center">
@@ -47,10 +40,6 @@ const mapStateToProps = ({ tvShows }, props) => ({
   tvShow: tvShows.find(show => show.id.toString() === props.id),
 });
 
-const mapDispatchToProps = dispatch => ({
-  onFetch: data => dispatch(addTvShowData(data)),
-});
-
 TvShowDetails.propTypes = {
   tvShow: propTypes.objectOf(propTypes.oneOfType([
     propTypes.string,
@@ -58,7 +47,6 @@ TvShowDetails.propTypes = {
     propTypes.object,
   ])),
   routeProps: propTypes.objectOf(propTypes.object),
-  onFetch: propTypes.func.isRequired,
   history: propTypes.objectOf(propTypes.func.isRequired),
 };
 
@@ -68,4 +56,4 @@ TvShowDetails.defaultProps = {
   history: {},
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TvShowDetails);
+export default connect(mapStateToProps)(TvShowDetails);
