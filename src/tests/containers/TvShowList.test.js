@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { TvShowList } from '../../components/TvShowList';
+import { TvShowList } from '../../containers/TvShowList';
 import tvShows from '../fixtures/tvShows';
 
 Enzyme.configure({ adapter: new Adapter() });

@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { TvShowDetails } from '../../components/TvShowDetails';
+import { TvShowDetails } from '../../containers/TvShowDetails';
 import tvShows from '../fixtures/tvShows';
 
 Enzyme.configure({ adapter: new Adapter() });

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import connectTvShowList from './components/TvShowList';
-import ConnectTvShowDetails from './components/TvShowDetails';
+import '../App.css';
+import connectTvShowList from '../containers/TvShowList';
+import ConnectTvShowDetails from '../containers/TvShowDetails';
 
 const App = () => (
   <div className="App">

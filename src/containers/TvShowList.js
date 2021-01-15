@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Container, Row } from 'react-bootstrap';
-import TvShowListItem from './TvShowListItem';
+import TvShowListItem from '../components/TvShowListItem';
 import addTvShowData from '../actions/tvShows';
 import ConnectTvShowFilter from './TvShowFilter';
 import filteredtvShows from '../selectors/filtertvShows';
