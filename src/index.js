@@ -10,9 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const jsx = (
   <Provider store={store}>
     <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </BrowserRouter>
   </Provider>
 );

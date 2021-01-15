@@ -44,7 +44,7 @@ export const TvShowDetails = ({
           </div>
           <Button className="mb-3" onClick={() => history.goBack()}>Go to Homepage</Button>
         </Container>
-      ) : (<h3>Page loading</h3>)}
+      ) : (<></>)}
     </>
   );
 };
