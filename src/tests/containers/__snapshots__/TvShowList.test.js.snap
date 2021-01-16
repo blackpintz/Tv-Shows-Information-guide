@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TvShowList component with the list of tvShows 1`] = `
+<Fragment>
+  <Container
+    fluid={false}
+  >
+    <h1>
+      TV Information Guide.
+    </h1>
+    <Connect(TvShowFilter) />
+    <Row
+      noGutters={false}
+    >
+      <TvShowListItem
+        key="1"
+        show={
+          Object {
+            "id": 1,
+            "number": 29,
+            "show": Object {
+              "genres": Array [
+                "Comedy",
+                "Thriller",
+              ],
+              "id": 11,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/105/264401.jpg",
+                "original": "http://static.tvmaze.com/uploads/images/medium_portrait/105/264401.jpg",
+              },
+              "runtime": 20,
+              "schedule": Object {
+                "days": Array [
+                  "Monday",
+                ],
+                "time": "04:00",
+              },
+              "type": "scripted",
+            },
+          }
+        }
+      />
+      <TvShowListItem
+        key="2"
+        show={
+          Object {
+            "id": 2,
+            "show": Object {
+              "genres": Array [
+                "Romance",
+              ],
+              "id": 21,
+              "image": Object {
+                "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/105/264401.jpg",
+              },
+              "runtime": 30,
+            },
+          }
+        }
+      />
+    </Row>
+  </Container>
+</Fragment>
+`;
